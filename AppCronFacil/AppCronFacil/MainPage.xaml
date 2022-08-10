@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppCronometroFacil"
+             x:Class="AppCronometroFacil.MainPage"
+             BackgroundColor="{DynamicResource VerdeBebeEscuro}"
+             >
+
+    <StackLayout>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="45*"/>
+                <ColumnDefinition  Width="60*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100*"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+
+
+            <Image Margin="15,10,0,0" x:Name="Imagem1" Aspect="AspectFit" Source="logoBranco.png" VerticalOptions="Center" HorizontalOptions="Start"  Grid.Row="0" Grid.Column="0" ></Image>
+            <Button Margin="15,10,0,0" BackgroundColor="Transparent" x:Name="buttonMenu" TextColor="White" Clicked="buttonMenu_Clicked" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="1" Text="Menu" Grid.Row="0"></Button>
+
+            <StackLayout x:Name="panelCronometro" IsVisible="False" Margin="10,0,10,0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="20*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" FontSize="50"  TextColor="{DynamicResource Branco}" x:Name="labelRepeticao" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" ></Label>
+                    <Label Grid.Row="1" FontSize="100" TextColor="{DynamicResource Branco}" x:Name="labelCronometro" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" ></Label>
+                    <Label Grid.Row="2" FontSize="25"  TextColor="{DynamicResource Branco}" x:Name="labelInfo" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" ></Label>
+
+                </Grid>
+
+            </StackLayout>
+
+
+            <StackLayout x:Name="panelFinalizado" IsVisible="False" Margin="20,0,20,0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="20*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" FontSize="45"  TextColor="{DynamicResource Branco}" Text="Concluído" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" ></Label>
+                    <Label Grid.Row="1" FontSize="20"  TextColor="{DynamicResource Branco}" x:Name="labelInfoFinalizado" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" ></Label>
+                    <Label Grid.Row="2" FontSize="20"  TextColor="{DynamicResource Branco}" x:Name="labelTempoTotal" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" ></Label>
+
+                </Grid>
+
+            </StackLayout>
+
+            <StackLayout x:Name="panelFormulario" Margin="10,0,10,0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="33*"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Grid.Row="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+
+                        <Label TextColor="White" HorizontalTextAlignment="Center"  FontSize="Small" VerticalOptions="End" HorizontalOptions="Center" x:Name="labelCabRepeticao" Text="Repetiçoes"></Label>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="60*"/>
+                                <ColumnDefinition Width="20*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Pressed="buttonRemoveClicked" BackgroundColor="Transparent" TextColor="White" VerticalOptions="Start" HorizontalOptions="Center" Grid.Column="0" x:Name="buttonRemoveRepeticao" Text="-" FontAttributes="Bold" FontSize="30"></Button>
+                            <Entry  Grid.Column="1" HorizontalTextAlignment="Center" TextColor="{DynamicResource Branco}" FontSize="Large" VerticalOptions="Start" HorizontalOptions="Fill" x:Name="textBoxRepeticao" Keyboard="Numeric"></Entry>
+                            <Button Pressed="buttonAddClicked"    BackgroundColor="Transparent" TextColor="White" VerticalOptions="Start" HorizontalOptions="Center" Grid.Column="2" x:Name="buttonAddRepeticao" Text="+" FontAttributes="Bold" FontSize="30"></Button>
+
+                        </Grid>
+
+                        <BoxView BackgroundColor="{DynamicResource VerdeBebeClaro}" VerticalOptions="Center" HeightRequest="1"  HorizontalOptions="FillAndExpand" ></BoxView>
+
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+
+                        <Label TextColor="White" HorizontalTextAlignment="Center" FontSize="Small" VerticalOptions="End" HorizontalOptions="Center" x:Name="labelDuracao" Text="Duração do exercício"></Label>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="60*"/>
+                                <ColumnDefinition Width="20*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Pressed="buttonRemoveClicked" BackgroundColor="Transparent" TextColor="White" VerticalOptions="Start" HorizontalOptions="Center" Grid.Column="0" x:Name="buttonRemoveDuracao" Text="-" FontAttributes="Bold" FontSize="30"></Button>
+                            <Entry  Grid.Column="1" HorizontalTextAlignment="Center" TextColor="{DynamicResource Branco}" FontSize="Large"  VerticalOptions="Start" HorizontalOptions="Fill" x:Name="textBoxDuracao"  Keyboard="Numeric"></Entry>
+                            <Button Pressed="buttonAddClicked" BackgroundColor="Transparent" TextColor="White" VerticalOptions="Start" HorizontalOptions="Center" Grid.Column="2" x:Name="buttonAddDuracao" Text="+" FontAttributes="Bold" FontSize="30"></Button>
+
+                        </Grid>
+                        <Label TextColor="White" FontSize="10" VerticalOptions="Start" HorizontalOptions="Center" HorizontalTextAlignment="Center" x:Name="labelInfoDuracao" Text="segundos"></Label>
+                        <BoxView  BackgroundColor="{DynamicResource VerdeBebeClaro}" VerticalOptions="Center" HeightRequest="1"  HorizontalOptions="FillAndExpand" ></BoxView>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+
+                        <Label TextColor="White" HorizontalTextAlignment="Center"  FontSize="Small" VerticalOptions="End" HorizontalOptions="Center" x:Name="labelIntervalo" Text="Intervalo entre os exercícios"></Label>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20*"/>
+                                <ColumnDefinition Width="60*"/>
+                                <ColumnDefinition Width="20*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button Pressed="buttonRemoveClicked" BackgroundColor="Transparent" TextColor="White" VerticalOptions="Start" HorizontalOptions="Center" Grid.Column="0" x:Name="buttonRemoveIntervalo" Text="-" FontAttributes="Bold" FontSize="30"></Button>
+                            <Entry  Grid.Column="1" HorizontalTextAlignment="Center" TextColor="{DynamicResource Branco}" FontSize="Large" VerticalOptions="Start" HorizontalOptions="Fill" x:Name="textBoxIntervalo"  Keyboard="Numeric"></Entry>
+                            <Button Pressed="buttonAddClicked" BackgroundColor="Transparent" TextColor="White" VerticalOptions="Start" HorizontalOptions="Center" Grid.Column="2" x:Name="buttonAddIntervalo" Text="+" FontAttributes="Bold" FontSize="30"></Button>
+
+                        </Grid>
+
+                        <Label TextColor="White" FontSize="10" VerticalOptions="Start" HorizontalOptions="Center" HorizontalTextAlignment="Center" x:Name="labelInfoIntervalo" Text="segundos"></Label>
+                        <BoxView BackgroundColor="{DynamicResource VerdeBebeClaro}" VerticalOptions="Center" HeightRequest="1"  HorizontalOptions="FillAndExpand" ></BoxView>
+
+                    </StackLayout>
+
+                    <Label Grid.Row="3" FontSize="15"  TextColor="{DynamicResource Branco}" x:Name="labelTempoTotalForm" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" ></Label>
+                </Grid>
+
+
+
+            </StackLayout>
+
+            <StackLayout Margin="10,0,10,0" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40*" />
+                        <ColumnDefinition Width="60*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0" VerticalOptions="Center" HorizontalOptions="FillAndExpand" IsVisible="False" Image="iconReset.png" x:Name="buttonResetar" FontAttributes="Bold" Clicked="buttonResetar_Clicked" BackgroundColor="Transparent" TextColor="White" CornerRadius="1" FontSize="15" Text="Resetar" />
+
+                    <Button Grid.Column="1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Image="iconPlay.png" x:Name="buttonIniciarParar" FontAttributes="Bold" Clicked="buttonIniciarParar_Clicked" BackgroundColor="Transparent" TextColor="White" CornerRadius="1" FontSize="20" Text="Iniciar" />
+                </Grid>
+
+            </StackLayout>
+
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3">
+
+                <local:AdMobView x:Name="adMobView"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  />
+
+            </StackLayout>
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
+
+    
+    

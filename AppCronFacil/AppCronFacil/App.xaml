@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCronometroFacil.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <Color x:Key="Danger">#E74C3C</Color>
+            <Color x:Key="Success">#2ECC71</Color>
+            <Color x:Key="Info">#3498db</Color>
+            <Color x:Key="Warning">#f1c40f</Color>
+            <Color x:Key="Control">#ecf0f1</Color>
+            <Color x:Key="Secondary">#95a5a6</Color>
+
+            <Color x:Key="Branco">#fff</Color>
+
+
+            <Color x:Key="VerdeBebeClaro">#1abc9c</Color>
+            <Color x:Key="VerdeBebeEscuro">#16a085</Color>
+            <Color x:Key="VerdeClaro">#2ecc71</Color>
+            <Color x:Key="VerdeEscuro">#27ae60</Color>
+            <Color x:Key="AzulClaro">#3498db</Color>
+            <Color x:Key="AzulEscuro">#2980b9</Color>
+            <Color x:Key="RoxoClaro">#9b59b6</Color>
+            <Color x:Key="RoxoEscuro">#8e44ad</Color>
+            <Color x:Key="PretoClaro">#34495e</Color>
+            <Color x:Key="PretoEscuro">#373435</Color>
+            <Color x:Key="AmareloClaro">#f1c40f</Color>
+            <Color x:Key="AmareloEscuro">#f39c12</Color>
+            <Color x:Key="LaranjaClaro">#e67e22</Color>
+            <Color x:Key="LaranjaEscuro">#d35400</Color>
+            <Color x:Key="VermelhoClaro">#e74c3c</Color>
+            <Color x:Key="VermelhoEscuro">#c0392b</Color>
+            <Color x:Key="BrancoClaro">#ecf0f1</Color>
+            <Color x:Key="BrancoEscuro">#bdc3c7</Color>
+            <Color x:Key="CinzaClaro">#95a5a6</Color>
+            <Color x:Key="CinzaEscuro">#7f8c8d</Color>
+
+            <Style x:Key="BtnInfo" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="BorderRadius" Value="1"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource Info}"/>
+            </Style>
+
+            <Style x:Key="ButtonRoxoClaro" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="BorderRadius" Value="1"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource RoxoClaro}"/>
+            </Style>
+
+
+            <Style x:Key="BtnInfoLight" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource Info}"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="BorderRadius" Value="1"/>
+                <Setter Property="BorderColor" Value="{StaticResource AzulClaro}"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource Branco}"/>
+            </Style>
+
+            <Style x:Key="BtnDanger" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="BorderRadius" Value="1"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource Danger}"/>
+            </Style>
+
+            <Style x:Key="BtnSuccess" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="BorderRadius" Value="1"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource Success}"/>
+            </Style>
+
+            <Style x:Key="BtnWarn" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="BorderRadius" Value="1"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource Warning}"/>
+            </Style>
+
+            <Style x:Key="BtnSecondaryLight" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="BorderRadius" Value="1"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource Warning}"/>
+            </Style>
+
+            <Style x:Key="BtnSecondary" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="BorderRadius" Value="1"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource Secondary}"/>
+            </Style>
+
+            <Style x:Key="BtnDark" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="BorderRadius" Value="1"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource PretoEscuro}"/>
+            </Style>
+
+            <Style x:Key="BgControl" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource Control}"/>
+            </Style>
+
+            <Style x:Key="BgPretoClaro" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource PretoClaro}"/>
+            </Style>
+
+            <Style x:Key="BgPretoEscuro" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource PretoEscuro}"/>
+            </Style>
+
+            <Style x:Key="PageControl" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource Control}"/>
+            </Style>
+
+            <Style x:Key="PageBranca" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource BrancoClaro}"/>
+            </Style>
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
